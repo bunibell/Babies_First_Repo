@@ -27,10 +27,20 @@ public class WASD_RB : MonoBehaviour
             //Make Ridigbody move right
             rb.AddForce(Vector2.right * forceAmt);
         }
-        //Make Ridigbody move left
+        //Make Ridigbody move left by using A
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * forceAmt);
+        }
+        //Make the Rigidbody move up by using W
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.AddForce(Vector2.up * forceAmt);
+        }
+        //Make the Rigidbody move down by using S
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(Vector2.down * forceAmt);
         }
     }
 }
