@@ -46,10 +46,18 @@ public class WASD_RB : MonoBehaviour
     //OncollisionEnter2D happens when two 2D objects with colliders hit each other
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Make the cube change color when it hits another player 2 cube 
+        //Make the cube change color when it hits  player 2 cube 
         if (collision.transform.tag == "Player 2")
         {
+            //Find the color component of the item and change it to cyan
             GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+
+        //Make the cube change color when it hits player 3 cube 
+        if (collision.transform.tag == "Player 3")
+        {
+            //Find the color compnent of the item and change it to magenta 
+            GetComponent<SpriteRenderer>().color = Color.magenta;
         }
     }
 }
