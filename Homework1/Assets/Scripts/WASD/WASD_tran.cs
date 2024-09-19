@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WASD_tran : MonoBehaviour
@@ -7,10 +9,15 @@ public class WASD_tran : MonoBehaviour
     //Variables 
     public float speed = 3f;
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject pl2;
+
+    private bool spawn = true;
+
+    //Awake happens on spawn of an item
+    private void Awake()
     {
-        
+        pl2 = this.gameObject;
+
     }
 
     // Update is called once per frame
@@ -41,4 +48,22 @@ public class WASD_tran : MonoBehaviour
         }
         transform.position = pos;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Only spawn if true 
+        if (spawn)
+        {
+            spawn = false;
+            //Spawn a new Player 2 at a random location 
+            var pos = new Vector2(Random.Range(-8, 8), Random.Range(-2, 3));
+            Instantiate(pl2, pos, Quaternion.identity);
+
+            //Destroy player
+            Destroy(this.gameObject);
+            spawn = true;
+        }
+
+    }
+    
 }
