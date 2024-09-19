@@ -13,16 +13,19 @@ public class WASD_tran : MonoBehaviour
 
     private bool spawn = true;
 
+    public GameManager gameManager;
+
     //Awake happens on spawn of an item
     private void Awake()
     {
         pl2 = this.gameObject;
-
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         //Find the position of the object every frame and make a vector 
         Vector2 pos = transform.position;
 
@@ -46,7 +49,7 @@ public class WASD_tran : MonoBehaviour
         {
             pos.y -= speed * Time.deltaTime;
         }
-        transform.position = pos;
+        transform.position = pos;*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,6 +58,15 @@ public class WASD_tran : MonoBehaviour
         if (spawn)
         {
             spawn = false;
+            if (collision.transform.tag == "Player")
+            {
+                gameManager.sc_num++;
+            }else if (collision.transform.tag == "Player 3")
+            {
+                gameManager.p3sc_num++;
+            }
+
+
             //Spawn a new Player 2 at a random location 
             var pos = new Vector2(Random.Range(-8, 8), Random.Range(-2, 3));
             Instantiate(pl2, pos, Quaternion.identity);

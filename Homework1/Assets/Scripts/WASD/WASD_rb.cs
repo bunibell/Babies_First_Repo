@@ -13,8 +13,6 @@ public class WASD_RB : MonoBehaviour
 
     private Color defaultColor = Color.white;
 
-    public GameManager gameManager;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -66,9 +64,6 @@ public class WASD_RB : MonoBehaviour
             //Find the color compnent of the item and change it to magenta 
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
-
-        //Score plus 1 
-        gameManager.sc_num ++;
     }
 
     //OnCollisionExit2D happens when two 2D objecs with Colliders seperate
