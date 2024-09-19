@@ -469,7 +469,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAmt: 5
+  gameManager: {fileID: 758528097}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 1563277528}
+  sc_num: 0
 --- !u!4 &758528098
 Transform:
   m_ObjectHideFlags: 0
@@ -1027,7 +1029,7 @@ GameObject:
   - component: {fileID: 1508197765}
   - component: {fileID: 1508197764}
   - component: {fileID: 1508197763}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1187,7 @@ GameObject:
   - component: {fileID: 1535051414}
   - component: {fileID: 1535051413}
   - component: {fileID: 1535051412}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1479,7 @@ GameObject:
   - component: {fileID: 1620593280}
   - component: {fileID: 1620593279}
   - component: {fileID: 1620593278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1637,7 @@ GameObject:
   - component: {fileID: 1826250878}
   - component: {fileID: 1826250880}
   - component: {fileID: 1826250881}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
