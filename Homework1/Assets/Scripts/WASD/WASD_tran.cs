@@ -13,13 +13,13 @@ public class WASD_tran : MonoBehaviour
 
     private bool spawn = true;
 
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     //Awake happens on spawn of an item
     private void Awake()
     {
         pl2 = this.gameObject;
-        gameManager = FindObjectOfType<GameManager>();
+        //gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -60,10 +60,12 @@ public class WASD_tran : MonoBehaviour
             spawn = false;
             if (collision.transform.tag == "Player")
             {
-                gameManager.sc_num++;
+                //gameManager.sc_num++;
+                GameManager.instance.sc_num++;
             }else if (collision.transform.tag == "Player 3")
             {
-                gameManager.p3sc_num++;
+                //gameManager.p3sc_num++;
+                GameManager.instance.p3sc_num++;
             }
 
 

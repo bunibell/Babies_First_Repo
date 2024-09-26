@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,25 @@ public class GameManager : MonoBehaviour
     public int p3sc_num;
 
     public int sc_num;
+
+    private bool canstart = true;
+
+    //Awake is called on spawn of this script before start
+    private void Awake()
+    {
+        //A singleton must only have one instance check to make sure this is the only instance 
+        //if it is make sure it is not destroyed, if its not destroy this instance.
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,4 +57,14 @@ public class GameManager : MonoBehaviour
 
         p3score.text = "score: " + p3sc_num;
     }
+
+    public void StartGame() 
+    {
+        if (canstart)
+        {
+            SceneManager.LoadScene("GameScene");
+            canstart = false;
+        } 
+    }
+    
 }

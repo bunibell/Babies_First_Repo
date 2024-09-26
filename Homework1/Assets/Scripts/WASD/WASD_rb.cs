@@ -64,6 +64,8 @@ public class WASD_RB : MonoBehaviour
             //Find the color compnent of the item and change it to magenta 
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
+
+        GameManager.instance.StartGame(); 
     }
 
     //OnCollisionExit2D happens when two 2D objecs with Colliders seperate
