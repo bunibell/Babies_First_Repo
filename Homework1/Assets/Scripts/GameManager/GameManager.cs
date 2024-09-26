@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //Variables 
+    //Make it a singleton!
+    public static GameManager instance;
+
     public TextMeshProUGUI score;
 
     public TextMeshProUGUI p3score;
