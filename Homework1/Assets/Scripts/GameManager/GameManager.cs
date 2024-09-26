@@ -56,6 +56,13 @@ public class GameManager : MonoBehaviour
         score.text = "score: " + sc_num;
 
         p3score.text = "score: " + p3sc_num;
+        if (Input.GetKey(KeyCode.P))
+        {
+            SceneManager.LoadScene(1);
+            sc_num = 0;
+            p3sc_num = 0;
+            canstart = true;
+        }
     }
 
     public void StartGame() 
